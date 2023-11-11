@@ -368,10 +368,10 @@ df
 
 ```{python}
 sql = f"""
-select people_email, people_last_name from people 
-INNER JOIN peopleskills 
-WHERE id = peopleskills.people_id 
-AND peopleskills.skills_id IS NULL
+SELECT p.people_email, p.people_last_name
+FROM people p
+LEFT JOIN peopleskills ps ON p.id = ps.people_id 
+WHERE ps.skills_id IS NULL
 """
 ```
 

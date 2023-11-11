@@ -3439,7 +3439,7 @@ z-index: 1000;
 <p>The <em>people</em> table contains elements that describe the people at the company and their many attributes such as name, headhshot url, discord handke, ect. This help pair the people with role and skills in other tables.</p>
 <p>Below is a list of data in the <em>people</em> table.</p>
 <div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="55">
 <div>
 
 
@@ -3580,7 +3580,7 @@ z-index: 1000;
 <p>The <em>skills</em> table contains elements that describes the skills you can have at the company. There is the skills_id, skills_name, skills description, skills_tag, skills_url, and time_comitment. All of these were attributes of the skills you can have.</p>
 <p>Below is a list of data in the <em>skills</em> table.</p>
 <div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="56">
 <div>
 
 
@@ -3681,7 +3681,7 @@ z-index: 1000;
 <p>The <em>roles</em> table contains elements that describe roles at this company. There are roles_id , role name, and the sorting priority which tells the priority of the role at the company.</p>
 <p>Below is a list of data in the <em>roles</em> table.</p>
 <div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="57">
 <div>
 
 
@@ -3731,12 +3731,6 @@ z-index: 1000;
 <td>Mentor</td>
 <td>60</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>7</td>
-<td>DevOps</td>
-<td>70</td>
-</tr>
 </tbody>
 </table>
 
@@ -3760,7 +3754,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="59">
 <div>
 
 
@@ -3839,7 +3833,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="11">
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="61">
 <div>
 
 
@@ -3921,7 +3915,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="13">
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="63">
 <div>
 
 
@@ -3973,7 +3967,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="65">
 <div>
 
 
@@ -4037,7 +4031,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="17">
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="67">
 <div>
 
 
@@ -4087,15 +4081,15 @@ z-index: 1000;
 <p>(here a sample query)</p>
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">select people_email, people_last_name from people </span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">INNER JOIN peopleskills </span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss">WHERE id = peopleskills.people_id </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ss">AND peopleskills.skills_id IS NULL</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">SELECT p.people_email, p.people_last_name</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">FROM people p</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss">LEFT JOIN peopleskills ps ON p.id = ps.people_id </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ss">WHERE ps.skills_id IS NULL</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="19">
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="69">
 <div>
 
 
@@ -4134,7 +4128,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="21">
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="71">
 <div>
 
 
@@ -4178,7 +4172,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="23">
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="73">
 <div>
 
 
@@ -4226,7 +4220,7 @@ z-index: 1000;
 </div>
 <p>(and here is a sample result from the query)</p>
 <div class="cell" data-execution_count="25">
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="75">
 <div>
 
 
@@ -4239,11 +4233,6 @@ z-index: 1000;
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>7</td>
-<td>DevOps</td>
-</tr>
 </tbody>
 </table>
 

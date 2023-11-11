@@ -128,7 +128,6 @@ INSERT INTO peopleskills(people_id, skills_id, date_acquired) values
     (2,5,'2023-11-10'),
     (3,1,'2023-11-10'),
     (3,5,'2023-11-10'),
-    (4, null, null),
     (5,3,'2023-11-10'),
     (5,6,'2023-11-10'),
     (6,2,'2023-11-10'),
@@ -170,8 +169,7 @@ INSERT INTO roles(roles_id, roles_name, sort_priority) values
     (3, 'Recruit', 30),
     (4, 'Team Lead', 40),
     (5, 'Boss', 50),
-    (6, 'Mentor', 60),
-    (7, 'DevOps', 70);
+    (6, 'Mentor', 60);
 
 
 # Section 10
